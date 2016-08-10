@@ -26,7 +26,8 @@ public class ApuntesActivity extends AppCompatActivity {
         // La Vista está claro lo que es
         // Y el array es nuestro Modelo, lo que sería la BBDD SQlite
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.apuntes_row,
-                R.id.row_text, new String[]{"Primer Apunte", "Segundo Apunte", "Tercer Apunte", "Cuarto Apunte"});
+                R.id.row_text, new String[]{"Primer Apunte", "Segundo Apunte", "Tercer Apunte", "Cuarto Apunte",
+                "Quinto Apunte", "Sexto Apunte", "Septimo Apunte", "Octavo Apunte en el cual vamos a explicar"});
 
         listView.setAdapter(arrayAdapter);
     }

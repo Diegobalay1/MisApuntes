@@ -23,7 +23,7 @@
             android:layout_height="60dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/apuntes_text"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:gravity="center_vertical"
             android:background="@color/azul_claro"
             android:padding="10dp"
