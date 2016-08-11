@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_claro"
+    android:background="@color/gris_claro"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,9 +15,9 @@
     tools:showIn="@layout/activity_apuntes">
 
     <ListView
+        android:id="@+id/apuntes_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/apuntes_list_view"
         tools:listitem="@layout/apuntes_row"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"/>

@@ -3,8 +3,16 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="es.diego3l.misapuntes.ApuntesActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_nuevo"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/nuevo_aviso"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_salir"
+        android:orderInCategory="1"
+        android:title="@string/salir_aviso"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:showAsAction="always"/>
+
 </menu>
