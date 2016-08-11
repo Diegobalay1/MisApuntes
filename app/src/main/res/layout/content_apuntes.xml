@@ -21,4 +21,19 @@
         tools:listitem="@layout/apuntes_row"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/text_contador"
+        android:background="@color/negro_alpha"
+        android:textColor="@color/blanco_roto"
+        android:padding="7dp"
+        android:textSize="17sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/contador_apuntes"
+        android:layout_alignBottom="@+id/apuntes_list_view"
+        android:layout_centerHorizontal="true"/>
+
+
 </RelativeLayout>

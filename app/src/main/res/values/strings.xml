@@ -4,4 +4,5 @@
     <string name="apuntes_text">Apuntes Text</string>
     <string name="nuevo_aviso">nuevo Apunte</string>
     <string name="salir_aviso">salir</string>
+    <string name="contador_apuntes">Contador Apuntes:</string>
 </resources>
