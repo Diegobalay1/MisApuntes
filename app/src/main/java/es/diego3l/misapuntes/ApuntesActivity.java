@@ -111,9 +111,9 @@ public class ApuntesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, final int masterListPosition, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ApuntesActivity.this);
                 ListView modeListView = new ListView(ApuntesActivity.this);
-                String[] modes = new String[] { "Editar Aviso", "Borrar Aviso"};
+                String[] modes = new String[] { "Editar Aviso", "Borrar Aviso", "comodín"};
                 ArrayAdapter<String> modeAdapter = new ArrayAdapter<String>(ApuntesActivity.this,
-                        android.R.layout.simple_list_item_1, android.R.id.text1, modes);
+                        android.R.layout.simple_list_item_2, android.R.id.text1, modes);
                 modeListView.setAdapter(modeAdapter);
                 builder.setView(modeListView);
                 final Dialog dialog = builder.create();
