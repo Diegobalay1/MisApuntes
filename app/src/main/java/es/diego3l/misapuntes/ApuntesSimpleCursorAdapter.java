@@ -32,12 +32,16 @@ public class ApuntesSimpleCursorAdapter extends SimpleCursorAdapter {
             holder = new ViewHolder();
             holder.colImp = cursor.getColumnIndexOrThrow(ApuntesDBAdapter.COL_IMPORTANT);
             holder.listTab = view.findViewById(R.id.row_tab);
+            holder.listRow = view.findViewById(R.id.row_text);
             view.setTag(holder);
         }
         if (cursor.getInt(holder.colImp) > 0) {
             holder.listTab.setBackgroundColor(context.getResources().getColor(R.color.naranja));
         } else {
             holder.listTab.setBackgroundColor(context.getResources().getColor(R.color.rosa));
+        }
+        if (cursor.getInt(holder.colImp) > 0) {
+            holder.listRow.setBackgroundColor(context.getResources().getColor(R.color.naranja_claro));
         }
 
     }
@@ -48,5 +52,6 @@ public class ApuntesSimpleCursorAdapter extends SimpleCursorAdapter {
         int colImp;
         //almacenar por la vista
         View listTab;
+        View listRow;
     }
 }

@@ -43,8 +43,6 @@ public class ApuntesActivity extends AppCompatActivity {
             contador++;
             mDbAdapter.createReminder("Hacer la compra semanal", false);
             contador++;
-            mDbAdapter.deleteReminder(1);
-
         }
 
         //El arrayAdapter es ahora nuestro controlador
