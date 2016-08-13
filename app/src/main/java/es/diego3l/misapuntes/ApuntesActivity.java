@@ -1,5 +1,6 @@
 package es.diego3l.misapuntes;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,10 +12,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ApuntesActivity extends AppCompatActivity {
     private ListView listView;
+    private ApuntesDBAdapter mDbAdapter;
+    private ApuntesSimpleCursorAdapter mCursorAdapter;
+    private int contador = 0;
+    private TextView textoContador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +28,74 @@ public class ApuntesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apuntes);
 
         listView = (ListView) findViewById(R.id.apuntes_list_view);
+        findViewById(R.id.apuntes_list_view);
+        listView.setDivider(null);
+        mDbAdapter = new ApuntesDBAdapter(this);
+        mDbAdapter.open();
+
+        if (savedInstanceState == null) {
+            //limpiar todos los datos
+            mDbAdapter.deleteAllReminders();
+            //Add algunos datos
+            mDbAdapter.createReminder("Visitar el Centro de recogida", true);
+            contador++;
+            mDbAdapter.createReminder("Comprobar el Correo", false);
+            contador++;
+            mDbAdapter.createReminder("Hacer la compra semanal", false);
+            contador++;
+            mDbAdapter.deleteReminder(1);
+
+        }
+
         //El arrayAdapter es ahora nuestro controlador
         //Modelo Vista Controlador (Model, View, Controller)
         // El Adapter es el controller
         // La Vista está claro lo que es
         // Y el array es nuestro Modelo, lo que sería la BBDD SQlite
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.apuntes_row,
+        /*ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.apuntes_row,
                 R.id.row_text, new String[]{"Primer Apunte", "Segundo Apunte", "Tercer Apunte", "Cuarto Apunte",
-                "Quinto Apunte", "Sexto Apunte", "Septimo Apunte", "Octavo Apunte en el cual vamos a explicar"});
+                "Quinto Apunte", "Sexto Apunte", "Septimo Apunte", "Octavo Apunte en el cual vamos a explicar"});*/
 
-        listView.setAdapter(arrayAdapter);
+        Cursor cursor = mDbAdapter.fetchAllReminders();
+
+        //desde las columnas definidas en la base de datos
+        String[] from = new String[]{
+                ApuntesDBAdapter.COL_CONTENT
+        };
+
+        //a la id de views en el layout
+        int[] to = new int[]{
+                R.id.row_text
+        };
+
+        mCursorAdapter = new ApuntesSimpleCursorAdapter(
+                //context
+                ApuntesActivity.this,
+                //el layout de la fila
+                R.layout.apuntes_row,
+                //cursor
+                cursor,
+                //desde columnas definidas en la base de datos
+                from,
+                //a las ids de views en el layout
+                to,
+                //flag ~ no usado
+                0);
+
+        //el cursorAdapter (controller) está ahora actualizando la listView (vista)
+        //con datos desde la base de datos (modelo)
+        textoContador = (TextView) findViewById(R.id.text_contador);
+
+        if (contador == 0){
+            textoContador.setText("Contador Apuntes: " + contador + ". Nada pendiente.");
+        } else if (contador == 1){
+            textoContador.setText("Contador Apuntes: " + contador + " mensaje pendiente.");
+        } else {
+            textoContador.setText("Contador Apuntes: " + contador + " mensajes pendientes.");
+        }
+
+        listView.setAdapter(mCursorAdapter);
+
     }
 
     @Override

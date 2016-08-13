@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="62dp"
+              android:layout_height="60dp"
               android:orientation="vertical"
               android:background="@color/gris_claro">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="57dp">
 
         <view
             android:id="@+id/row_tab"
@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/row_text"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/apuntes_text"
             android:textSize="17sp"
