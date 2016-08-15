@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,7 +33,7 @@ public class ApuntesActivity extends AppCompatActivity {
     private ListView listView;
     private ApuntesDBAdapter mDbAdapter;
     private ApuntesSimpleCursorAdapter mCursorAdapter;
-    private int contador;
+    private int contador = 0;
     private TextView textoContador;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -40,6 +41,11 @@ public class ApuntesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apuntes);
+        //Incluimos icono en la barra de acción
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.mipmap.ic_launcher);
 
         listView = (ListView) findViewById(R.id.apuntes_list_view);
         findViewById(R.id.apuntes_list_view);
@@ -195,13 +201,13 @@ public class ApuntesActivity extends AppCompatActivity {
             });
         }
 
-        if (contador == 0){
+        /*if (contador == 0){
             textoContador.setText("Contador Apuntes: " + contador + ". Nada pendiente.");
         } else if (contador == 1){
             textoContador.setText("Contador Apuntes: " + contador + " mensaje pendiente.");
         } else {
             textoContador.setText("Contador Apuntes: " + contador + " mensajes pendientes.");
-        }
+        }*/
     }
 
     private int getIdFromPosition(int nC) {
