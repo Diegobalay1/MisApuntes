@@ -70,6 +70,8 @@ public class ApuntesDBAdapter {
         values.put(COL_CONTENT, name);
         values.put(COL_IMPORTANT, important ? 1 : 0);
         mDb.insert(TABLE_NAME, null, values);
+        ApuntesActivity elContador = new ApuntesActivity();
+        elContador.contadorArriba();
     }
         //sobrecargado para tomar un aviso
     public long createReminder(Apunte reminder) {
@@ -77,6 +79,8 @@ public class ApuntesDBAdapter {
         values.put(COL_CONTENT, reminder.getContent()); // Nombre Contacto
         values.put(COL_IMPORTANT, reminder.getImportant()); // Número teléfono Contacto
         // Insertar fila
+        ApuntesActivity elContador = new ApuntesActivity();
+        elContador.contadorArriba();
         return mDb.insert(TABLE_NAME, null, values);
     }
 
@@ -120,9 +124,14 @@ public class ApuntesDBAdapter {
     //Delete
     public void deleteReminder(int nId) {
         mDb.delete(TABLE_NAME, COL_ID + "=?", new String[]{String.valueOf(nId)});
+        ApuntesActivity elContador = new ApuntesActivity();
+        elContador.contadorAbajo();
     }
     public void deleteAllReminders() {
+
         mDb.delete(TABLE_NAME, null, null);
+        ApuntesActivity elContador = new ApuntesActivity();
+        elContador.contadorACero();
     }
 
     //Clase interna privada estática DatabaseHelper

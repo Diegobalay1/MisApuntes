@@ -5,4 +5,9 @@
     <string name="nuevo_aviso">nuevo Apunte</string>
     <string name="salir_aviso">salir</string>
     <string name="contador_apuntes">Contador Apuntes:</string>
+    <string name="delete">delete</string>
+    <string name="new_apunte">Nuevo Apunte</string>
+    <string name="important">Importante</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="enviar">Enviar</string>
 </resources>

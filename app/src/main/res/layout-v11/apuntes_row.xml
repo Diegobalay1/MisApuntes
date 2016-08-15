@@ -7,6 +7,7 @@
 
     <LinearLayout
         android:orientation="horizontal"
+        android:background="?android:attr/activatedBackgroundIndicator"
         android:layout_width="match_parent"
         android:layout_height="57dp">
 
@@ -15,7 +16,7 @@
             class="android.view.View"
             android:layout_width="15dp"
             android:layout_height="match_parent"
-            android:background="@color/rosa"/>
+            android:background="@color/azul_claro"/>
 
         <TextView
             android:id="@+id/row_text"
@@ -25,7 +26,6 @@
             android:text="@string/apuntes_text"
             android:textSize="17sp"
             android:gravity="center_vertical"
-            android:background="@color/blanco_roto"
             android:padding="10dp"
             android:textColor="@color/azul_oscuro"
             android:ellipsize="end"
@@ -36,7 +36,7 @@
     <view
         class="android.view.View"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="#000"/>
 
     <view

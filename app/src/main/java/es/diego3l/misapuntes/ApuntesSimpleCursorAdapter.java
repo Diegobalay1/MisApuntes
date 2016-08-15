@@ -40,9 +40,11 @@ public class ApuntesSimpleCursorAdapter extends SimpleCursorAdapter {
         } else {
             holder.listTab.setBackgroundColor(context.getResources().getColor(R.color.rosa));
         }
-        if (cursor.getInt(holder.colImp) > 0) {
+        /*if (cursor.getInt(holder.colImp) > 0) {
             holder.listRow.setBackgroundColor(context.getResources().getColor(R.color.naranja_claro));
-        }
+        } else {
+            holder.listRow.setBackgroundColor(context.getResources().getColor(R.color.blanco_roto));
+        }*/
 
     }
 

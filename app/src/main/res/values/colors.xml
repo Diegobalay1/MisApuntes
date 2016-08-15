@@ -6,9 +6,14 @@
     <color name="azul_claro">#58A7B0</color>
     <color name="rosa">#C800B5</color>
     <color name="azul_oscuro">#09097B</color>
+    <color name="azul_neutro">#ff1118ff</color>
+    <color name="gris_oscuro">#181818</color>
+    <color name="negro">#000000</color>
+    <color name="blanco">#ffffff</color>
     <color name="gris_claro">#a5a097</color>
     <color name="blanco_roto">#d9d7d3</color>
     <color name="negro_alpha">#44413b</color>
+    <color name="verde">#003300</color>
     <color name="naranja">#ffff381a</color>
     <color name="naranja_claro">#ffb742</color>
 </resources>
